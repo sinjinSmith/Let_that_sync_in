@@ -7,7 +7,7 @@ shutil.move("path/to/current/file.foo", "path/to/new/destination/for/file.foo")
 
 
 def start():
-    print('start')
+    print('start now')
 
 
 if "__init__" == '__main__':
