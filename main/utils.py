@@ -1,5 +1,7 @@
 import os
 import shutil
+import random
+
 
 
 #os.rename("path/to/current/file.foo", "path/to/new/destination/for/file.foo")
@@ -7,23 +9,18 @@ import shutil
 #shutil.move("path/to/current/file.foo", "path/to/new/destination/for/file.foo")
 
 
-def create_txtFile():
+def create_txtFile(backup_path):
     fileName = 'testing.txt'
-    filePath =  "backup folder [test]/" + fileName
+    filePath = backup_path + "/" + fileName
     create_txt = open(filePath, 'w')
     create_txt.write("Testing content...")
     create_txt.close()
+    return filePath
 
 
-    #erases file after for testing purposes
-    checking_files = True
-    while checking_files:
-        input()
-        os.remove(filePath)
-        checking_files = False
-        
-
-create_txtFile()
+# shutil.copy(src, dst, *, follow_symlinks=True)
+def copy_file_to(src, dst):
+    shutil.copy(src, dst)
 
 
 def find_all_files():

@@ -1,24 +1,19 @@
 import os
 import shutil
+from utils import *
 
-BACKUP_PATH = "C:/Users/Sinjin/Desktop/Let That Sync In/backup folder [test]"
+# static backup path for now will change to variable that user selects
+backup_start = "C:/Users/Sinjin/Desktop/Pythonic Works/!Active Projects/Let That Sync In/backup start [test]"
+backup_end = "C:/Users/Sinjin/Desktop/Pythonic Works/!Active Projects/Let That Sync In/backup end [test]"
 
 
 def start():
-    fileName = 'testing.txt'
-    filePath = BACKUP_PATH + "/" + fileName
-    create_txt = open(filePath, 'w')
-    create_txt.write("Testing content...")
-    create_txt.close()
+    create_txtFile(backup_start)
+    newFile = create_txtFile(backup_start)
+    usr1 = input("Would you like to copy the new file?(y/n)  -  ")
+    copy_file_to(newFile, backup_end)
 
-    checking_files = True
-    while checking_files:
-        cont = input('. . . To reset press -> [ r ] . . .\t')
-        if cont.lower() == 'r':
-            os.remove(filePath)
-            checking_files = False
-        else:
-            print("\n! Incorrect Response !\n")
+
 
 if __name__ == '__main__':
     start()
