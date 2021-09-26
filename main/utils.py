@@ -9,18 +9,21 @@ import random
 #shutil.move("path/to/current/file.foo", "path/to/new/destination/for/file.foo")
 
 
-def create_txtFile(backup_path):
-    fileName = 'testing.txt'
+def create_txtFile(backup_path, fileName):
     filePath = backup_path + "/" + fileName
     create_txt = open(filePath, 'w')
     create_txt.write("Testing content...")
     create_txt.close()
     return filePath
 
-
 # shutil.copy(src, dst, *, follow_symlinks=True)
 def copy_file_to(src, dst):
     shutil.copy(src, dst)
+    return src, dst
+
+
+def del_file(path):
+    os.remove(path)
 
 
 def find_all_files():

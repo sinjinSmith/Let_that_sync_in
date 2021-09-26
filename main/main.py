@@ -8,10 +8,18 @@ backup_end = "C:/Users/Sinjin/Desktop/Pythonic Works/!Active Projects/Let That S
 
 
 def start():
-    create_txtFile(backup_start)
-    newFile = create_txtFile(backup_start)
+    fileName = input("")
+    newFile = create_txtFile(backup_start, fileName)
     usr1 = input("Would you like to copy the new file?(y/n)  -  ")
-    copy_file_to(newFile, backup_end)
+    file_src, file_dst = copy_file_to(newFile, backup_end)
+    usr2 = input("Delete old backup file?(y/n)  -  ")
+    del_file(file_src)
+
+
+    #-------------------------------------------------------
+    usr3 = input("Delete backup files for testing purposes....")
+    file_dst = file_dst + "/" + fileName
+    del_file(file_dst)
 
 
 
