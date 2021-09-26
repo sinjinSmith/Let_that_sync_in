@@ -5,15 +5,25 @@ from utils import *
 # static backup path for now will change to variable that user selects
 backup_start = "C:/Users/Sinjin/Desktop/Pythonic Works/!Active Projects/Let That Sync In/backup start [test]"
 backup_end = "C:/Users/Sinjin/Desktop/Pythonic Works/!Active Projects/Let That Sync In/backup end [test]"
-
+dir1 = "C:/Users/Sinjin/Desktop/Pythonic Works/!Active Projects/Let That Sync In"
 
 def start():
-    fileName = input("")
+    fileName = input("Enter name for a new file  -  ")
     newFile = create_txtFile(backup_start, fileName)
+
+
+    dirName = input("Enter new dir name  -  ")
+    dirPath = dir1 + "/" + dirName 
+    new_dir(dirPath)
+
     usr1 = input("Would you like to copy the new file?(y/n)  -  ")
-    file_src, file_dst = copy_file_to(newFile, backup_end)
+    if usr1.lower() == 'y':
+        file_src, file_dst = copy_file_to(newFile, dirPath)
+
+
     usr2 = input("Delete old backup file?(y/n)  -  ")
-    del_file(file_src)
+    if usr2.lower() == 'y':
+        del_file(file_src)
 
 
     #-------------------------------------------------------
