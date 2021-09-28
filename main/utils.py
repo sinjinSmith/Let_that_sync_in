@@ -16,24 +16,15 @@ def explore(path):
         subprocess.run([FILEBROWSER_PATH, path])
     elif os.path.isfile(path):
         subprocess.run([FILEBROWSER_PATH, '/select,', os.path.normpath(path)])
-
-
 #explore("C:/Users/Sinjin/Desktop/Pythonic Works/!Active Projects/Let That Sync In")
 
 #tkinter.Tk().withdraw()  # prevents an empty tkinter window from appearing
-
 #folder_path = filedialog.askdirectory()
-
 
 #os.rename("path/to/current/file.foo", "path/to/new/destination/for/file.foo")
 #os.replace("path/to/current/file.foo", "path/to/new/destination/for/file.foo")
 #shutil.move("path/to/current/file.foo", "path/to/new/destination/for/file.foo")
-
-
-#os.mkdir(path, mode=0o777, *, dir_fd=None)
-def new_dir(path):
-    os.mkdir(path)
-
+#os.mkdir(path, mode=0o777, *, dir_fd=None)     -   create new directories
 
 # shutil.copy(src, dst, *, follow_symlinks=True)
 def copy_file_to(src, dst):
@@ -47,7 +38,6 @@ def del_dir(path):
 def del_file(path):
     os.remove(path)
 
-
 def create_txtFile(backup_path, fileName):
     filePath = backup_path + "/" + fileName
     create_txt = open(filePath, 'w')
@@ -55,7 +45,7 @@ def create_txtFile(backup_path, fileName):
     create_txt.close()
     return filePath
 
-
+# --------------------------------------------------------------
 
 def find_all_files():
     #search through backup to check/find all directories/files
