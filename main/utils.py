@@ -40,6 +40,9 @@ def copy_file_to(src, dst):
     shutil.copy(src, dst)
     return src, dst
 
+#os.rmdir(path, *, dir_fd=None)
+def del_dir(path):
+        os.rmdir(path)
 
 def del_file(path):
     os.remove(path)

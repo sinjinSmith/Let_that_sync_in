@@ -27,9 +27,12 @@ def start():
 
 
     #-------------------------------------------------------
-    usr3 = input("Delete backup files for testing purposes....")
+    usr3 = input("Delete all new file/folders for testing purposes?(y/n) - ")
     file_dst = file_dst + "/" + fileName
-    del_file(file_dst)
+    if usr3.lower() == 'y':
+        del_file(file_dst)
+        del_dir(dirPath)
+
 
 
 
