@@ -1,0 +1,32 @@
+<MyGrid>
+
+    folderA: folderA
+    backup_path: backup_path
+
+
+
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+        pos: 0, 0 
+
+        GridLayout:
+            cols:2
+
+            Label:
+                text: "Folder: "
+
+            TextInput:
+                id: folderA
+                multiline: False
+
+            Label:
+                text: "Backup path: "
+            
+            TextInput:
+                id: backup_path
+                multiline: False
+
+        Button:
+            text: "Sync-in"
+            on_press: root.btn()
